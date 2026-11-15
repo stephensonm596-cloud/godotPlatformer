@@ -13,15 +13,20 @@ func _ready() -> void:
 	if dir == 0:
 		dir = 1
 		$Sprite2D.flip_h = false if dir == 1 else true
-	$AnimatedSprite2D.play("move")
+	$AnimatedSprite2D.autoplay = "move"
+	$AnimatedSprite2D.animation = "move"
+	$AnimatedSprite2D.play()
+
 
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	
+	if(!$AnimatedSprite2D.is_playing()):
+		$AnimatedSprite2D.animation = "move"
+		$AnimatedSprite2D.play()
 	if dir == 1 and(!$right_ray.is_colliding() or $right_wall_ray.is_colliding()):
 		$AnimatedSprite2D.flip_h = false
 		dir = -1
+		
 		
 	if dir == -1 and(!$left_ray.is_colliding() or $left_wall_ray.is_colliding()):
 		$AnimatedSprite2D.flip_h = true
@@ -29,7 +34,7 @@ func _physics_process(delta: float) -> void:
 	
 	
 	
-	velocity.x = lerp(velocity.x, dir * speed, 10.0 * delta)
+	velocity.x = lerp(velocity.x, dir * speed, 1.0 * delta)
 	velocity.y += gravity
 	
 	
@@ -39,5 +44,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == player_node:
-		get_tree().reload_current_scene()
-		print("Huhu")
+		$AnimatedSprite2D.play("attack")
+		#get_tree().reload_current_scene()
+		print("Dead")

@@ -44,7 +44,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_yh6ux")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"attack",
 "speed": 8.0
 }, {
@@ -61,7 +61,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_whoqg")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"death",
 "speed": 8.0
 }, {
@@ -78,7 +78,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("14_m6w4y")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"hurt",
 "speed": 8.0
 }, {
@@ -120,7 +120,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5iini"]
 size = Vector2(20, 12)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_n20yf"]
+radius = 108.01852
+
 [node name="SlimeMonster" type="CharacterBody2D" unique_id=1971372563]
+collision_layer = 2
 script = ExtResource("1_cj7rd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1376058310]
@@ -129,8 +133,7 @@ shape = SubResource("RectangleShape2D_ao4dk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1840957007]
 sprite_frames = SubResource("SpriteFrames_n20yf")
-animation = &"idle"
-frame_progress = 0.5677321
+animation = &"move"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1513413871]
 
@@ -139,12 +142,12 @@ position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_5iini")
 
 [node name="left_ray" type="RayCast2D" parent="." unique_id=48190551]
-position = Vector2(-12, 2)
+position = Vector2(-15, 2)
 target_position = Vector2(0, 15)
 hit_from_inside = true
 
 [node name="right_ray" type="RayCast2D" parent="." unique_id=1868253950]
-position = Vector2(12, 2)
+position = Vector2(15, 2)
 target_position = Vector2(0, 15)
 hit_from_inside = true
 
@@ -157,5 +160,13 @@ target_position = Vector2(0, 10)
 position = Vector2(6, 0)
 rotation = -1.5707964
 target_position = Vector2(0, 10)
+
+[node name="enter_area" type="Area2D" parent="." unique_id=192711009]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enter_area" unique_id=1114725954]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_n20yf")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
