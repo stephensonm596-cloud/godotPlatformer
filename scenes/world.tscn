@@ -233,6 +233,7 @@ centered = false
 [node name="CaveBG" type="Parallax2D" parent="." unique_id=1440430199]
 repeat_size = Vector2(256, 0)
 repeat_times = 12
+ignore_camera_scroll = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CaveBG" unique_id=403880461]
 position = Vector2(527, 224)
@@ -300,12 +301,10 @@ position = Vector2(-167, 258.5)
 position = Vector2(-282.5, 243.5)
 
 [node name="platform4" parent="." unique_id=2091413205 groups=["pushable_platforms"] instance=ExtResource("5_71j4m")]
-position = Vector2(1083.5, 317.5)
-scale = Vector2(0.4, 0.4)
+position = Vector2(1083.5, 303)
 
 [node name="SlimeMonster11" parent="." unique_id=439524806 instance=ExtResource("3_k0juu")]
 position = Vector2(1248, 261.5)
 
 [node name="platform5" parent="." unique_id=627620636 groups=["pushable_platforms"] instance=ExtResource("5_71j4m")]
-position = Vector2(1647.5001, 206.50002)
-scale = Vector2(3, 3)
+position = Vector2(1630.5, 302)
