@@ -205,12 +205,13 @@ sources/0 = SubResource("TileSetAtlasSource_tlwt5")
 scale = Vector2(2, 2)
 
 [node name="Background" type="Parallax2D" parent="." unique_id=666836629]
-scroll_scale = Vector2(1, 0)
+scroll_scale = Vector2(0.1, 1)
 repeat_size = Vector2(512, 0)
 repeat_times = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=1103703136]
 texture_filter = 1
+position = Vector2(-119, -311.5)
 scale = Vector2(2, 2)
 texture = ExtResource("1_fj7yv")
 centered = false
