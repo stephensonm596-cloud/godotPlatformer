@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bl8ik5038d24l" path="res://Assets/untitled folder/exterior-parallaxBG1.png" id="1_fj7yv"]
 [ext_resource type="PackedScene" uid="uid://gmqmv1hg51a0" path="res://scenes/slime_monster.tscn" id="3_k0juu"]
 [ext_resource type="PackedScene" uid="uid://cdg82mh4ljjty" path="res://scenes/player.tscn" id="3_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://wjicay6pgi55" path="res://scenes/platform2.tscn" id="5_71j4m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj7yv"]
 texture = ExtResource("1_f3sb7")
@@ -233,4 +234,16 @@ position = Vector2(223, 4)
 
 [node name="player" parent="." unique_id=1057721969 instance=ExtResource("3_tlwt5")]
 position = Vector2(107, 9)
+scale = Vector2(0.5, 0.5)
+
+[node name="platform" parent="." unique_id=1633965263 groups=["pushable_platforms"] instance=ExtResource("5_71j4m")]
+position = Vector2(6, -20)
+scale = Vector2(0.5, 0.5)
+
+[node name="platform2" parent="." unique_id=2135991821 groups=["pushable_platforms"] instance=ExtResource("5_71j4m")]
+position = Vector2(74.5, -80)
+scale = Vector2(0.5, 0.5)
+
+[node name="platform3" parent="." unique_id=689357962 groups=["pushable_platforms"] instance=ExtResource("5_71j4m")]
+position = Vector2(240.5, -119)
 scale = Vector2(0.5, 0.5)
