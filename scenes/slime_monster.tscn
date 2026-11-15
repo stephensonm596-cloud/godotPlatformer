@@ -118,17 +118,18 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5iini"]
-size = Vector2(20, 12)
+size = Vector2(28, 13)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n20yf"]
-radius = 117.0
+radius = 25.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rx631"]
-radius = 171.14322
+radius = 37.01351
 
 [node name="SlimeMonster" type="CharacterBody2D" unique_id=1971372563]
 collision_layer = 2
 script = ExtResource("1_cj7rd")
+dir = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1376058310]
 position = Vector2(0, 9.5)
@@ -139,9 +140,11 @@ sprite_frames = SubResource("SpriteFrames_n20yf")
 animation = &"move"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1513413871]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=225553514]
-position = Vector2(0, 5)
+position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_5iini")
 
 [node name="left_ray" type="RayCast2D" parent="." unique_id=48190551]
