@@ -29,6 +29,17 @@ func _physics_process(delta: float) -> void:
 		jump_count += 1
 		velocity.y = jump_velocity
 	move_and_slide()
+	
+	for i in get_slide_collision_count():
+		var collision := get_slide_collision(i)
+		var collider := collision.get_collider()
+		
+		# Prüfen, ob der Kollisionspartner dein DamageLayer ist
+		if collider is TileMapLayer and collider.name == "DamageLayer":
+			kill_player()
+	
+	
+	
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		var body = collision.get_collider()
@@ -76,3 +87,6 @@ func _process(delta: float) -> void:
 	if health <= 0:
 		get_tree().reload_current_scene()
 		print("Dead")
+
+func kill_player():
+	health = 0
