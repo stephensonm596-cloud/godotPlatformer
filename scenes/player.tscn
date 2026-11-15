@@ -2,22 +2,53 @@
 
 [ext_resource type="Texture2D" uid="uid://335uwvatjcvw" path="res://Assets/untitled folder/box.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://gt5rjxcq7fcj" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://xtvf8dhrnhnp" path="res://Assets/Slime/Individual Sprites/slime-idle-0.png" id="3_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://clf0mvx6ds0ye" path="res://Assets/Slime/Individual Sprites/slime-idle-1.png" id="4_fjrip"]
+[ext_resource type="Texture2D" uid="uid://wd1ly0k4mvnn" path="res://Assets/Slime/Individual Sprites/slime-idle-2.png" id="5_smehm"]
+[ext_resource type="Texture2D" uid="uid://dv2vccw300u81" path="res://Assets/Slime/Individual Sprites/slime-idle-3.png" id="6_ur7pv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8vuu"]
-size = Vector2(32, 32)
+size = Vector2(21.5, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qfnet"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tuyoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fjrip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_smehm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ur7pv")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="player" type="CharacterBody2D" unique_id=1057721969]
 texture_filter = 1
 scale = Vector2(2, 2)
 collision_layer = 2
 script = ExtResource("1_g2els")
+health = 60
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1029737999]
+position = Vector2(0.5, 4.5)
+scale = Vector2(0.125, 0.140625)
 texture = ExtResource("1_3vyb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1843205568]
+position = Vector2(0.5, 4.5)
 shape = SubResource("RectangleShape2D_u8vuu")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=225892153]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2031421638]
+sprite_frames = SubResource("SpriteFrames_qfnet")
+frame = 1
+frame_progress = 0.13354155

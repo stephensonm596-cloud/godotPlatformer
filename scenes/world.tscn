@@ -292,3 +292,9 @@ position = Vector2(714.5, 343.5)
 
 [node name="SlimeMonster8" parent="." unique_id=372857582 instance=ExtResource("3_k0juu")]
 position = Vector2(1523.5, 339.5)
+
+[node name="SlimeMonster9" parent="." unique_id=128400551 instance=ExtResource("3_k0juu")]
+position = Vector2(-167, 258.5)
+
+[node name="SlimeMonster10" parent="." unique_id=1647630882 instance=ExtResource("3_k0juu")]
+position = Vector2(-282.5, 243.5)

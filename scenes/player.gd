@@ -14,6 +14,9 @@ var vertical_recoil = 100
 var jump_count = 0
 var is_knocked_back: bool = false
 
+func _ready() -> void:
+	$AnimatedSprite2D.play("default")
+
 func _physics_process(delta: float) -> void:
 
 	if not is_on_floor():
