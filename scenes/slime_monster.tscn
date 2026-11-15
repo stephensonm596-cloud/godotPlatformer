@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://gmqmv1hg51a0"]
+
+[ext_resource type="Script" uid="uid://ch8rsrmajuq8v" path="res://character_body_2d.gd" id="1_cj7rd"]
+[ext_resource type="Texture2D" uid="uid://dhicoyium25yj" path="res://Assets/Slime/Individual Sprites/slime-attack-0.png" id="2_e487r"]
+[ext_resource type="Texture2D" uid="uid://ckiadgcmjsu3c" path="res://Assets/Slime/Individual Sprites/slime-attack-1.png" id="3_6ne84"]
+[ext_resource type="Texture2D" uid="uid://bg8y7h8l162np" path="res://Assets/Slime/Individual Sprites/slime-attack-2.png" id="4_r2v5r"]
+[ext_resource type="Texture2D" uid="uid://bbhhcl8dgt2b7" path="res://Assets/Slime/Individual Sprites/slime-attack-3.png" id="5_5dkep"]
+[ext_resource type="Texture2D" uid="uid://c8o27vggbe2xw" path="res://Assets/Slime/Individual Sprites/slime-attack-4.png" id="6_yh6ux"]
+[ext_resource type="Texture2D" uid="uid://cc8aa3kvh3y48" path="res://Assets/Slime/Individual Sprites/slime-die-0.png" id="7_7vr3c"]
+[ext_resource type="Texture2D" uid="uid://dh5cyfsgwmkfd" path="res://Assets/Slime/Individual Sprites/slime-die-1.png" id="8_gjm08"]
+[ext_resource type="Texture2D" uid="uid://dpuds838r4xt" path="res://Assets/Slime/Individual Sprites/slime-die-2.png" id="9_sgjgk"]
+[ext_resource type="Texture2D" uid="uid://dk0sfyrb2ovxw" path="res://Assets/Slime/Individual Sprites/slime-die-3.png" id="10_whoqg"]
+[ext_resource type="Texture2D" uid="uid://dns04j0qpqcrc" path="res://Assets/Slime/Individual Sprites/slime-hurt-0.png" id="11_kvpv2"]
+[ext_resource type="Texture2D" uid="uid://bkpwy6fdwb4d0" path="res://Assets/Slime/Individual Sprites/slime-hurt-1.png" id="12_jvhvc"]
+[ext_resource type="Texture2D" uid="uid://d0xhaw3haovfo" path="res://Assets/Slime/Individual Sprites/slime-hurt-2.png" id="13_v7vot"]
+[ext_resource type="Texture2D" uid="uid://c1xkbnolstqxp" path="res://Assets/Slime/Individual Sprites/slime-hurt-3.png" id="14_m6w4y"]
+[ext_resource type="Texture2D" uid="uid://xtvf8dhrnhnp" path="res://Assets/Slime/Individual Sprites/slime-idle-0.png" id="15_htdc5"]
+[ext_resource type="Texture2D" uid="uid://clf0mvx6ds0ye" path="res://Assets/Slime/Individual Sprites/slime-idle-1.png" id="16_jsdqg"]
+[ext_resource type="Texture2D" uid="uid://wd1ly0k4mvnn" path="res://Assets/Slime/Individual Sprites/slime-idle-2.png" id="17_s1hbg"]
+[ext_resource type="Texture2D" uid="uid://dv2vccw300u81" path="res://Assets/Slime/Individual Sprites/slime-idle-3.png" id="18_v404g"]
+[ext_resource type="Texture2D" uid="uid://b3k4ppiwjkflg" path="res://Assets/Slime/Individual Sprites/slime-move-0.png" id="19_3u8or"]
+[ext_resource type="Texture2D" uid="uid://cssdmoxlpxrbb" path="res://Assets/Slime/Individual Sprites/slime-move-1.png" id="20_lgpxd"]
+[ext_resource type="Texture2D" uid="uid://conwtat671gdi" path="res://Assets/Slime/Individual Sprites/slime-move-2.png" id="21_jund4"]
+[ext_resource type="Texture2D" uid="uid://2jqxnecg64xu" path="res://Assets/Slime/Individual Sprites/slime-move-3.png" id="22_vnlnk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ao4dk"]
+size = Vector2(6, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n20yf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_e487r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6ne84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r2v5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5dkep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yh6ux")
+}],
+"loop": 1,
+"name": &"attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_7vr3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gjm08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_sgjgk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_whoqg")
+}],
+"loop": 1,
+"name": &"death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_kvpv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jvhvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_v7vot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_m6w4y")
+}],
+"loop": 1,
+"name": &"hurt",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_htdc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jsdqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_s1hbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_v404g")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_3u8or")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_lgpxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_jund4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_vnlnk")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5iini"]
+size = Vector2(20, 12)
+
+[node name="SlimeMonster" type="CharacterBody2D" unique_id=1971372563]
+script = ExtResource("1_cj7rd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1376058310]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_ao4dk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1840957007]
+sprite_frames = SubResource("SpriteFrames_n20yf")
+animation = &"idle"
+frame_progress = 0.5677321
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1513413871]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=225553514]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_5iini")
+
+[node name="left_ray" type="RayCast2D" parent="." unique_id=48190551]
+position = Vector2(-12, 2)
+target_position = Vector2(0, 15)
+hit_from_inside = true
+
+[node name="right_ray" type="RayCast2D" parent="." unique_id=1868253950]
+position = Vector2(12, 2)
+target_position = Vector2(0, 15)
+hit_from_inside = true
+
+[node name="left_wall_ray" type="RayCast2D" parent="." unique_id=1615711532]
+position = Vector2(-6, 0)
+rotation = 1.5707964
+target_position = Vector2(0, 10)
+
+[node name="right_wall_ray" type="RayCast2D" parent="." unique_id=657210927]
+position = Vector2(6, 0)
+rotation = -1.5707964
+target_position = Vector2(0, 10)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

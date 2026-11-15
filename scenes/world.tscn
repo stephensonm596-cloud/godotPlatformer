@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c3xt0al7s1r8n" path="res://Assets/untitled folder/twilight-tiles.png" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://bl8ik5038d24l" path="res://Assets/untitled folder/exterior-parallaxBG1.png" id="1_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://gmqmv1hg51a0" path="res://scenes/slime_monster.tscn" id="3_k0juu"]
 [ext_resource type="PackedScene" uid="uid://cdg82mh4ljjty" path="res://scenes/player.tscn" id="3_tlwt5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj7yv"]
@@ -211,7 +212,7 @@ repeat_times = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=1103703136]
 texture_filter = 1
-position = Vector2(-119, -311.5)
+position = Vector2(-80, -351.5)
 scale = Vector2(2, 2)
 texture = ExtResource("1_fj7yv")
 centered = false
@@ -226,6 +227,9 @@ texture_filter = 1
 tile_map_data = PackedByteArray("AAD9//3/AAACAAQAAAAUAP3/AAACAAQAAAD///r/AAABAAAAAAAAAPr/AAABAAAAAAABAPr/AAABAAAAAAACAPr/AAABAAAAAAADAPr/AAABAAAAAAAEAPr/AAABAAAAAAAFAPr/AAABAAAAAAAGAPr/AAABAAAAAAAHAPr/AAABAAAAAAAIAPr/AAABAAAAAAAJAPr/AAABAAAAAAAKAPr/AAABAAAAAAALAPr/AAABAAAAAAAMAPr/AAABAAAAAAANAPr/AAABAAAAAAAOAPr/AAABAAAAAAAPAPr/AAABAAAAAAAQAPr/AAABAAAAAAARAPr/AAABAAAAAAASAPr/AAABAAAAAAD7//r/AAABAAAAAAAWAPr/AAABAAAAAAD6//r/AAAAAAAAAAAXAPr/AAACAAAAAAA=")
 tile_set = SubResource("TileSet_eg0p3")
 collision_enabled = false
+
+[node name="SlimeMonster" parent="." unique_id=1971372563 instance=ExtResource("3_k0juu")]
+position = Vector2(223, 4)
 
 [node name="player" parent="." unique_id=1057721969 instance=ExtResource("3_tlwt5")]
 position = Vector2(107, 9)
