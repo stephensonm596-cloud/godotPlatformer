@@ -10,19 +10,24 @@ extends CharacterBody2D
 
 @export var push_force_horizontal := 1200.0
 @export var push_force_vertical := 1200.0
-var vertical_recoil = 200
+var vertical_recoil = 100
+var jump_count = 0
 var is_knocked_back: bool = false
 
 func _physics_process(delta: float) -> void:
 
 	if not is_on_floor():
 		velocity.y += gravity * delta
+	else :
+		jump_count = 0
 	var direction := Input.get_axis("move_left", "move_right")	
+
 	if not is_knocked_back:
 		velocity.x = direction * speed
 
-		if Input.is_action_just_pressed("jump") and is_on_floor():
-			velocity.y = jump_velocity
+	if Input.is_action_just_pressed("jump") and jump_count < 2:
+		jump_count += 1
+		velocity.y = jump_velocity
 	move_and_slide()
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)

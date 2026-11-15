@@ -230,20 +230,26 @@ tile_set = SubResource("TileSet_eg0p3")
 collision_enabled = false
 
 [node name="SlimeMonster" parent="." unique_id=1971372563 instance=ExtResource("3_k0juu")]
-position = Vector2(223, 4)
+position = Vector2(35, -32)
 
 [node name="player" parent="." unique_id=1057721969 instance=ExtResource("3_tlwt5")]
 position = Vector2(107, 9)
 scale = Vector2(0.5, 0.5)
 
 [node name="platform" parent="." unique_id=1633965263 groups=["pushable_platforms"] instance=ExtResource("5_71j4m")]
-position = Vector2(6, -20)
+position = Vector2(231, -26.5)
 scale = Vector2(0.5, 0.5)
 
 [node name="platform2" parent="." unique_id=2135991821 groups=["pushable_platforms"] instance=ExtResource("5_71j4m")]
-position = Vector2(74.5, -80)
+position = Vector2(78, -53.5)
 scale = Vector2(0.5, 0.5)
 
 [node name="platform3" parent="." unique_id=689357962 groups=["pushable_platforms"] instance=ExtResource("5_71j4m")]
-position = Vector2(240.5, -119)
+position = Vector2(412, -39.5)
 scale = Vector2(0.5, 0.5)
+
+[node name="SlimeMonster2" parent="." unique_id=1755930459 instance=ExtResource("3_k0juu")]
+position = Vector2(362, -106.5)
+
+[node name="SlimeMonster3" parent="." unique_id=1879423691 instance=ExtResource("3_k0juu")]
+position = Vector2(128, -61.5)
