@@ -6,6 +6,9 @@ var speed: float = 100
 var gravity: float = 50
 var should_chase: bool = false
 
+enum State {IDLE,CHASE,BLOCKED}
+var current_state = State.IDLE
+
 @export_range(-1,1,) var dir: int = 1
 
 
@@ -47,3 +50,15 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		$AnimatedSprite2D.play("attack")
 		#get_tree().reload_current_scene()
 		print("Dead")
+
+
+func _on_enter_area_body_entered(body: Node2D) -> void:
+	if body == player_node:
+		print("Player detected")
+		current_state = State.CHASE
+
+
+func _on_player_detectionexit_body_exited(body: Node2D) -> void:
+	if body == player_node:
+		print("Player exited")
+		current_state = State.IDLE

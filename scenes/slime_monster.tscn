@@ -121,7 +121,10 @@ animations = [{
 size = Vector2(20, 12)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n20yf"]
-radius = 108.01852
+radius = 117.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rx631"]
+radius = 171.14322
 
 [node name="SlimeMonster" type="CharacterBody2D" unique_id=1971372563]
 collision_layer = 2
@@ -161,12 +164,23 @@ position = Vector2(6, 0)
 rotation = -1.5707964
 target_position = Vector2(0, 10)
 
-[node name="enter_area" type="Area2D" parent="." unique_id=192711009]
+[node name="PlayerDetection-enter" type="Area2D" parent="." unique_id=192711009]
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enter_area" unique_id=1114725954]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection-enter" unique_id=1114725954]
 position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_n20yf")
 
+[node name="PlayerDetection-exit" type="Area2D" parent="." unique_id=1157755561]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection-exit" unique_id=936063981]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_rx631")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="PlayerDetection-enter" to="." method="_on_enter_area_body_entered"]
+[connection signal="body_entered" from="PlayerDetection-exit" to="." method="_on_enter_area_body_entered"]
+[connection signal="body_exited" from="PlayerDetection-exit" to="." method="_on_player_detectionexit_body_exited"]
